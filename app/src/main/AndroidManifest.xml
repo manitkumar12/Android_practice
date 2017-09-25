@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.grademojo.android_practice">
-
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -11,10 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Welcome"
-            android:label="@string/title_activity_welcome"
-
-            >
+        <activity
+            android:name=".Main3Activity"
+           >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,10 +19,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity" />
-        <activity android:name=".Main2Activity"
-            android:label="@string/title_activity_welcome"
-
-            />
+        <activity
+            android:name=".Main2Activity"
+            android:label="@string/title_activity_welcome" />
+        <activity android:name=".Welcome"/>
     </application>
-
 </manifest>

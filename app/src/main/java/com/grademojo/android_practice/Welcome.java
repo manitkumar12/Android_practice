@@ -197,5 +197,4 @@ public class Welcome extends AppCompatActivity {
             View view = (View) object;
             container.removeView(view);
         }
-    }
-}
+    }}

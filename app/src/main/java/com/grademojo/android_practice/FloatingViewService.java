@@ -42,7 +42,7 @@ public class FloatingViewService extends Service {
         floating_view = LayoutInflater.from(this).inflate(R.layout.layout_floating_widget,null);
 
 
-        final WindowManager.LayoutParams layoutParams = new WindowManager.LayoutParams(
+         final WindowManager.LayoutParams layoutParams = new WindowManager.LayoutParams(
 
                 WindowManager.LayoutParams.WRAP_CONTENT,
                 WindowManager.LayoutParams.WRAP_CONTENT,
@@ -85,7 +85,7 @@ public class FloatingViewService extends Service {
         play_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(FloatingViewService.this, "playing nxt song", Toast.LENGTH_SHORT).show();
+                Toast.makeText(FloatingViewService.this, "playing song", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -119,22 +119,19 @@ public class FloatingViewService extends Service {
             }
         });
 
-
-
         ImageView openButton = (ImageView) floating_view.findViewById(R.id.open_button);
-
         openButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(FloatingViewService.this,Main2Activity.class);
 
+                Intent intent = new Intent(FloatingViewService.this, Main2Activity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent);
 
                 stopSelf();
+
             }
         });
-
 
         floating_view.findViewById(R.id.root_container).setOnTouchListener(new View.OnTouchListener() {
 
@@ -151,26 +148,19 @@ public class FloatingViewService extends Service {
                     case MotionEvent.ACTION_DOWN:
 
                         initialX = layoutParams.x;
-
                         initialY = layoutParams.y;
-
                         initialTouchX = event.getRawX();
-
                         initialTouchY = event.getRawY();
 
 
                         return true;
 
-
-
                     case MotionEvent.ACTION_UP:
 
-                        int Xdiff = (int)(event.getRawX()- initialTouchX);
+                        int X_diff = (int)(event.getRawX()- initialTouchX);
                         int Ydiff = (int)(event.getRawY()- initialTouchY);
 
-
-
-                        if (Xdiff <10 && Ydiff <10)
+                        if (X_diff <10 && Ydiff <10)
 
                         {
 
